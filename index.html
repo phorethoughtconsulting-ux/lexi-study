@@ -6,286 +6,354 @@
 <meta name="robots" content="noindex">
 <title>A Quick Study — AI for Your Real Estate Business · Phorethought</title>
 <meta name="description" content="A 3-minute study to find the AI systems that would actually move the needle in your real estate business.">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230F1114'/%3E%3Ctext x='16' y='23' font-family='Georgia,serif' font-size='20' fill='%23E8B563' text-anchor='middle'%3EP%3C/text%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%2313243E'/%3E%3Ctext x='16' y='23' font-family='Georgia,serif' font-size='20' fill='%233F7D57' text-anchor='middle'%3EP%3C/text%3E%3C/svg%3E">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://phorethoughtconsulting-ux.github.io/lexi-study/">
 <meta property="og:title" content="A Quick Study — AI for Your Real Estate Business">
 <meta property="og:description" content="Take 3 minutes, tap-to-pick. Get your snapshot, and I'll come back with the 3 systems I'd build for you.">
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="https://phorethoughtconsulting-ux.github.io/lexi-study/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Phorethought — AI systems built for your real estate business. You think it, we create it.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://phorethoughtconsulting-ux.github.io/lexi-study/og-image.png">
 <meta name="twitter:title" content="A Quick Study — AI for Your Real Estate Business · Phorethought">
 <meta name="twitter:description" content="Take 3 minutes, tap-to-pick. Get your snapshot, and I'll come back with the 3 systems I'd build for you.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
+  /* ═══ LEXI STUDY — Wardrobe lane: PARLOR (client-facing, warm real-estate skin) ═══
+     Ticket · LANE: PARLOR · SIGNATURE: warm paper + navy/forest-green real-estate palette
+     + a hairline "roofline" motif atop the hero and section markers · RHYTHM: full-bleed
+     bands alternate ground — paper hero → green-tint Reality → white Lanes → paper quiz
+     → deep-navy closing. No flat slab. */
   *{margin:0;padding:0;box-sizing:border-box}
   :root{
-    --bg:#0F1114;--panel:#161A20;--panel2:#1B2027;--ink:#ECE7DE;--muted:#9AA0A6;
-    --gold:#E8B563;--gold-dim:#C9A24B;--green:#8FC66B;
-    --line:rgba(232,181,99,.16);--line2:rgba(255,255,255,.07);
+    --paper:#F6F3EC;--paper2:#FBFAF5;--surface:#FFFFFF;
+    --ink:#13243E;--ink2:#3B4A60;--muted:#6C7788;
+    --green:#3F7D57;--green-d:#2F5E41;--sand:#BE8E48;
+    --tint:#EDF2ED;--rule:#E6E1D5;--line:#EAE5DA;
     --serif:'Fraunces',Georgia,serif;--sans:'Figtree',system-ui,-apple-system,sans-serif;
   }
   html{scroll-behavior:smooth}
-  body{background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.6;-webkit-font-smoothing:antialiased;
-    background-image:radial-gradient(1100px 560px at 82% -8%,rgba(232,181,99,.07),transparent 60%)}
-  .wrap{max-width:900px;margin:0 auto;padding:clamp(30px,6vw,68px) clamp(20px,5vw,40px) 90px}
-  .eyebrow{font-size:12px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);font-weight:600}
-  h1{font-family:var(--serif);font-weight:500;font-size:clamp(30px,6vw,50px);line-height:1.05;margin:14px 0 16px;letter-spacing:-.5px}
-  .lede{color:#cfc9bf;font-size:clamp(15px,2vw,18px);max-width:640px}
-  .lede em{color:var(--gold-dim);font-style:italic}
+  body{background:var(--paper);color:var(--ink);font-family:var(--sans);line-height:1.6;-webkit-font-smoothing:antialiased}
+
+  /* ── full-bleed bands give section-to-section rhythm ── */
+  .band{padding:clamp(44px,7vw,78px) clamp(20px,5vw,40px)}
+  .band .inner{max-width:920px;margin:0 auto}
+  .band .inner.narrow{max-width:760px}
+  .hero-band{background:
+      radial-gradient(1200px 520px at 88% -12%,rgba(63,125,87,.10),transparent 60%),
+      linear-gradient(180deg,var(--paper2),var(--paper));
+    padding-top:clamp(30px,5vw,52px);position:relative;overflow:hidden}
+  .reality-band{background:var(--tint);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .lanes-band{background:var(--surface)}
+  .quiz-band{background:var(--paper);border-top:1px solid var(--line)}
+  .next-band{background:linear-gradient(165deg,#15263f,#0f1c30);color:#E9EEF2;border-top:4px solid var(--green)}
+
+  /* signature: a hairline roofline atop the hero */
+  .roofline{display:block;width:64px;height:auto;color:var(--green);margin-bottom:18px}
+
+  .eyebrow{display:inline-flex;align-items:center;gap:9px;font-size:12px;letter-spacing:2.5px;text-transform:uppercase;color:var(--green-d);font-weight:700}
+  .eyebrow::before{content:'';width:20px;height:2px;background:var(--sand);border-radius:2px}
+  h1{font-family:var(--serif);font-weight:500;font-size:clamp(30px,6vw,50px);line-height:1.05;margin:14px 0 16px;letter-spacing:-.5px;color:var(--ink)}
+  h1 em{font-style:italic;color:var(--green-d);font-weight:500}
+  .lede{color:var(--ink2);font-size:clamp(15px,2vw,18px);max-width:640px}
+  .lede em{color:var(--green-d);font-style:italic;font-weight:500}
   .signed{margin-top:16px;font-size:14px;color:var(--muted)}
   .signed b{color:var(--ink)}
 
-  .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:40px 0 8px}
-  .stat{background:var(--panel);border:1px solid var(--line2);border-radius:14px;padding:20px}
-  .stat .n{font-family:var(--serif);font-size:clamp(24px,4vw,32px);color:var(--gold);font-weight:600;line-height:1}
-  .stat .l{font-size:13px;color:var(--muted);margin-top:8px}
+  .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:40px 0 4px}
+  .stat{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:20px;box-shadow:0 10px 30px rgba(19,36,62,.05)}
+  .stat .n{font-family:var(--serif);font-size:clamp(24px,4vw,32px);color:var(--green);font-weight:600;line-height:1}
+  .stat .l{font-size:13px;color:var(--ink2);margin-top:8px}
+  .stat .src{font-size:11px;color:var(--muted);margin-top:8px;font-style:italic}
   @media (max-width:640px){.stats{grid-template-columns:1fr}}
 
-  h2.sec{font-family:var(--serif);font-weight:500;font-size:clamp(22px,3.4vw,30px);margin:64px 0 6px;letter-spacing:-.3px}
-  h2.sec .n{color:var(--gold);font-size:13px;font-family:var(--sans);letter-spacing:2px;display:block;margin-bottom:8px;font-weight:600}
-  .sec-note{color:var(--muted);font-size:14.5px;margin-bottom:24px;max-width:700px}
+  h2.sec{font-family:var(--serif);font-weight:500;font-size:clamp(22px,3.4vw,30px);margin:0 0 6px;letter-spacing:-.3px;color:var(--ink)}
+  .next-band h2.sec{color:#fff}
+  h2.sec .n{color:var(--green-d);font-size:12px;font-family:var(--sans);letter-spacing:2px;display:flex;align-items:center;gap:8px;margin-bottom:10px;font-weight:700;text-transform:uppercase}
+  h2.sec .n::before{content:'';width:16px;height:2px;background:var(--sand)}
+  .next-band h2.sec .n{color:#9FE1B7}
+  .sec-note{color:var(--ink2);font-size:15px;margin-bottom:24px;max-width:700px}
+  .sec-note em{color:var(--green-d);font-style:italic}
 
-  .lanes{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:10px}
+  .lanes{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:22px}
   @media (max-width:640px){.lanes{grid-template-columns:1fr}}
-  .lane{background:var(--panel);border:1px solid var(--line2);border-radius:13px;padding:16px 18px}
-  .lane h4{font-size:15px;font-weight:700;margin-bottom:3px}
-  .lane h4 .ln{font-family:var(--serif);color:var(--gold);font-weight:600;font-size:15px;margin-right:8px}
+  .lane{background:var(--paper2);border:1px solid var(--line);border-left:3px solid var(--green);border-radius:12px;padding:16px 18px;transition:transform .14s,box-shadow .18s}
+  .lane:hover{transform:translateY(-2px);box-shadow:0 14px 34px rgba(19,36,62,.07)}
+  .lane h4{font-size:15px;font-weight:700;margin-bottom:3px;color:var(--ink)}
+  .lane h4 .ln{font-family:var(--serif);color:var(--green);font-weight:600;font-size:16px;margin-right:8px}
   .lane p{font-size:13px;color:var(--muted)}
 
   /* questionnaire */
-  .q{background:var(--panel);border:1px solid var(--line2);border-radius:15px;padding:20px 22px;margin:14px 0}
+  .q{background:var(--surface);border:1px solid var(--line);border-radius:15px;padding:20px 22px;margin:14px 0;box-shadow:0 8px 24px rgba(19,36,62,.04)}
   .q legend{font-size:16px;font-weight:700;color:var(--ink);padding:0;margin-bottom:2px;display:block}
-  .q .qn{color:var(--gold);font-family:var(--serif);font-weight:600;margin-right:8px}
+  .q .qn{color:var(--green);font-family:var(--serif);font-weight:600;margin-right:8px}
   .q .opts{margin-top:12px;display:grid;gap:8px}
   .opt{position:relative}
   .opt input{position:absolute;opacity:0;pointer-events:none}
-  .opt label{display:block;cursor:pointer;border:1px solid var(--line2);border-radius:11px;padding:11px 14px 11px 40px;font-size:14.5px;color:#d6d2c9;transition:border-color .15s,background .15s}
-  .opt label::before{content:'';position:absolute;left:14px;top:50%;transform:translateY(-50%);width:16px;height:16px;border-radius:50%;border:2px solid var(--muted);transition:all .15s}
-  .opt label:hover{border-color:var(--line)}
-  .opt input:checked + label{border-color:var(--gold);background:linear-gradient(180deg,rgba(232,181,99,.08),rgba(232,181,99,.02));color:var(--ink)}
-  .opt input:checked + label::before{border-color:var(--gold);background:radial-gradient(circle,var(--gold) 0 42%,transparent 46%)}
-  .opt input:focus-visible + label{outline:2px solid var(--gold);outline-offset:2px}
+  .opt label{display:block;cursor:pointer;border:1px solid var(--rule);border-radius:11px;padding:11px 14px 11px 40px;font-size:14.5px;color:var(--ink2);background:var(--paper2);transition:border-color .15s,background .15s,color .15s}
+  .opt label::before{content:'';position:absolute;left:14px;top:50%;transform:translateY(-50%);width:16px;height:16px;border-radius:50%;border:2px solid #B9BEC7;transition:all .15s;background:#fff}
+  .opt label:hover{border-color:var(--green);background:#fff}
+  .opt input:checked + label{border-color:var(--green);background:linear-gradient(180deg,rgba(63,125,87,.09),rgba(63,125,87,.03));color:var(--ink);font-weight:600}
+  .opt input:checked + label::before{border-color:var(--green);background:radial-gradient(circle,var(--green) 0 42%,#fff 46%)}
+  .opt input:focus-visible + label{outline:2px solid var(--green);outline-offset:2px}
 
   .cta{margin-top:30px;text-align:center}
-  .btn{font-family:var(--sans);font-size:15px;font-weight:700;color:#0F1114;background:var(--gold);border:none;border-radius:12px;padding:15px 30px;cursor:pointer;transition:transform .12s,box-shadow .2s}
-  .btn:hover{transform:translateY(-1px);box-shadow:0 10px 30px rgba(232,181,99,.22)}
+  .btn{font-family:var(--sans);font-size:15px;font-weight:700;color:#fff;background:var(--green);border:none;border-radius:12px;padding:15px 30px;cursor:pointer;transition:transform .12s,box-shadow .2s,background .2s}
+  .btn:hover{transform:translateY(-1px);box-shadow:0 12px 30px rgba(63,125,87,.28);background:var(--green-d)}
   .btn:active{transform:translateY(0)}
   .progress{font-size:13px;color:var(--muted);margin-top:12px}
 
-  .snap{background:var(--panel2);border:1px solid var(--line);border-radius:15px;padding:clamp(20px,4vw,28px);margin-top:22px;display:none}
+  .snap{background:var(--surface);border:1px solid var(--green);border-radius:15px;padding:clamp(20px,4vw,28px);margin-top:22px;display:none;box-shadow:0 16px 40px rgba(19,36,62,.08)}
   .snap.show{display:block;animation:rise .4s ease}
   @keyframes rise{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
-  .snap h3{font-family:var(--serif);font-weight:500;font-size:22px;margin-bottom:6px}
+  .snap h3{font-family:var(--serif);font-weight:500;font-size:22px;margin-bottom:6px;color:var(--ink)}
   .snap p.n{color:var(--muted);font-size:14px;margin-bottom:14px}
-  .snap textarea{width:100%;min-height:230px;background:#0F1114;border:1px solid var(--line2);border-radius:11px;color:#d6d2c9;font-family:var(--sans);font-size:13.5px;line-height:1.7;padding:16px;resize:vertical}
+  .snap textarea{width:100%;min-height:230px;background:var(--paper2);border:1px solid var(--rule);border-radius:11px;color:var(--ink2);font-family:var(--sans);font-size:13.5px;line-height:1.7;padding:16px;resize:vertical}
   .snap .row{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
-  .btn.ghost{background:transparent;color:var(--gold);border:1px solid var(--gold)}
-  .btn.ghost:hover{box-shadow:none;background:rgba(232,181,99,.08)}
-  .copied{color:var(--green);font-size:13.5px;font-weight:600;align-self:center;opacity:0;transition:opacity .2s}
+  .btn.ghost{background:transparent;color:var(--green-d);border:1.5px solid var(--green)}
+  .btn.ghost:hover{box-shadow:none;background:rgba(63,125,87,.08);color:var(--green-d)}
+  .copied{color:var(--green-d);font-size:13.5px;font-weight:600;align-self:center;opacity:0;transition:opacity .2s}
   .copied.show{opacity:1}
+  /* mobile: full-width, big-tap send buttons + 16px inputs (no iOS zoom-on-focus) */
+  @media (max-width:560px){
+    .snap .row{flex-direction:column;align-items:stretch;gap:12px}
+    .snap .row .btn{width:100%;padding:16px 20px;font-size:16px;min-height:52px}
+    .snap textarea{font-size:16px}
+    .copied{align-self:stretch;text-align:center}
+  }
 
-  .next{background:var(--panel);border:1px solid var(--line);border-radius:15px;padding:clamp(22px,4vw,28px);margin-top:16px}
   .next ol{list-style:none;counter-reset:step;margin-top:6px}
-  .next li{position:relative;padding:10px 0 10px 40px;font-size:14.5px;color:#d6d2c9;border-bottom:1px solid var(--line2)}
+  .next li{position:relative;padding:11px 0 11px 42px;font-size:14.5px;color:#D7DEE6;border-bottom:1px solid rgba(255,255,255,.1)}
   .next li:last-child{border-bottom:none}
-  .next li::before{counter-increment:step;content:counter(step);position:absolute;left:0;top:9px;width:26px;height:26px;border-radius:50%;background:rgba(232,181,99,.12);color:var(--gold);font-weight:700;font-size:13px;display:flex;align-items:center;justify-content:center}
-  .next li b{color:var(--ink)}
-
-  .safe{margin-top:22px;font-size:13.5px;color:var(--muted);border-left:2px solid var(--line);padding-left:16px}
-  .safe b{color:#d6d2c9}
+  .next li::before{counter-increment:step;content:counter(step);position:absolute;left:0;top:10px;width:27px;height:27px;border-radius:50%;background:rgba(63,125,87,.25);border:1px solid rgba(159,225,183,.4);color:#9FE1B7;font-weight:700;font-size:13px;display:flex;align-items:center;justify-content:center}
+  .next li b{color:#fff}
+  .next li em{color:#9FE1B7;font-style:italic}
+  .safe{margin-top:22px;font-size:13.5px;color:#B9C3CE;border-left:2px solid var(--green);padding-left:16px}
+  .safe b{color:#fff}
 
   @media (prefers-reduced-motion: reduce){
     html{scroll-behavior:auto}
     *,.snap.show{animation:none!important;transition:none!important}
-    .btn:hover{transform:none}
+    .btn:hover,.lane:hover{transform:none}
   }
-  footer{margin-top:70px;padding-top:26px;border-top:1px solid var(--line2);display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:12.5px;color:var(--muted);align-items:center}
+  footer{background:var(--paper);padding:26px clamp(20px,5vw,40px)}
+  footer .finner{max-width:920px;margin:0 auto;padding-top:24px;border-top:1px solid var(--line);display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:12.5px;color:var(--muted);align-items:center}
   footer .brand{font-family:var(--serif);color:var(--ink);font-size:16px;font-weight:500}
-  footer .brand span{color:var(--gold)}
+  footer .brand span{color:var(--green)}
+  footer a{color:inherit;text-decoration:none;border-bottom:1px solid transparent;transition:border-color .2s}
+  footer a:hover{border-bottom-color:var(--green)}
+  footer .finner a:not(.brand){color:var(--green-d);font-weight:600}
 </style>
 </head>
 <body>
-<div class="wrap">
 
-  <header>
-    <div class="eyebrow">Phorethought · A quick study for Lexi</div>
-    <h1>Let's find the AI that actually helps you sell.</h1>
-    <p class="lede">Hey Lexi — I build custom AI systems, and I'd love to build the right one <em>for you</em>. But I'm not going to guess. Before I build anything, I want to understand your actual day — where the hours go, and what you'd never miss if it just ran itself.</p>
-    <p class="lede" style="margin-top:12px">Read the quick reality below, then answer the questionnaire — it's all tap-to-pick, about 3 minutes. At the end you'll get a snapshot to send back to me, and I'll come back with the <em>three systems</em> I'd build for you first. You choose from there.</p>
-    <p class="signed">— <b>Nick</b> · Phorethought</p>
+  <!-- ═══ HERO (warm paper) ═══ -->
+  <section class="band hero-band">
+    <div class="inner">
+      <svg class="roofline" viewBox="0 0 120 40" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 38V20L60 4l54 16v18"/><path d="M42 38V26h36v12"/></svg>
+      <div class="eyebrow">Phorethought · A quick study for Lexi</div>
+      <h1>Let's find the AI that <em>actually</em> helps you sell.</h1>
+      <p class="lede">Hey Lexi — I build custom AI systems, and I'd love to build the right one <em>for you</em>. But I'm not going to guess. Before I build anything, I want to understand your actual day — where the hours go, and what you'd never miss if it just ran itself.</p>
+      <p class="lede" style="margin-top:12px">Read the quick reality below, then answer the questionnaire — it's all tap-to-pick, about 3 minutes. At the end you'll get a snapshot to send back to me, and I'll come back with the <em>three systems</em> I'd build for you first. You choose from there.</p>
+      <p class="signed">— <b>Nick</b> · Phorethought</p>
 
-    <div class="stats">
-      <div class="stat"><div class="n">&lt;20%</div><div class="l">Of the average agent's week is spent on actual revenue-generating work. The rest is admin, chasing, and coordinating.</div></div>
-      <div class="stat"><div class="n">21×</div><div class="l">More likely to convert a lead when you reply in 5 minutes instead of 30. The first agent to respond usually wins.</div></div>
-      <div class="stat"><div class="n">82%</div><div class="l">Of deals come from past clients &amp; referrals — the database most agents never systematically work.</div></div>
+      <div class="stats">
+        <div class="stat"><div class="n">&lt;20%</div><div class="l">Of the average agent's week is spent on actual revenue-generating work. The rest is admin, chasing, and coordinating.</div></div>
+        <div class="stat"><div class="n">21×</div><div class="l">More likely to convert a lead when you reply in 5 minutes instead of 30. The first agent to respond usually wins.</div><div class="src">Lead Response Management study</div></div>
+        <div class="stat"><div class="n">82%</div><div class="l">Of deals come from past clients &amp; referrals — the database most agents never systematically work.</div><div class="src">Nat'l Assoc. of Realtors</div></div>
+      </div>
     </div>
-  </header>
+  </section>
 
-  <h2 class="sec"><span class="n">The Reality</span>The business rewards selling. The job is mostly everything else.</h2>
-  <p class="sec-note">You didn't get licensed to write listing descriptions at 11pm, re-text a lead for the fourth time, or chase signatures after a contract's accepted. But that's where the hours actually go. AI is worth using in exactly the places that steal time from the work only <em>you</em> can do — being in front of people. The point isn't "use AI." It's taking the busywork off your plate so you can sell.</p>
-
-  <h2 class="sec"><span class="n">Where AI Actually Helps</span>Six places it earns its keep</h2>
-  <p class="sec-note">Not a magic button — specific systems for specific leaks. The questionnaire below figures out which of these matter most for <em>your</em> business.</p>
-  <div class="lanes">
-    <div class="lane"><h4><span class="ln">01</span>Speed &amp; lead capture</h4><p>New leads answered in 60 seconds, in your voice — day or night — so you're the first call, not the fourth.</p></div>
-    <div class="lane"><h4><span class="ln">02</span>Your database, worked</h4><p>Past clients &amp; referrals nurtured automatically with touches that feel personal, not spammy.</p></div>
-    <div class="lane"><h4><span class="ln">03</span>Listings &amp; marketing</h4><p>Description, captions, email, flyer — done in one pass, screened for Fair-Housing wording.</p></div>
-    <div class="lane"><h4><span class="ln">04</span>Transaction admin</h4><p>Deadlines tracked, signatures chased, clients updated — from accepted offer to close.</p></div>
-    <div class="lane"><h4><span class="ln">05</span>Content &amp; visibility</h4><p>One win turned into a week of on-brand posts, so you stay top-of-mind without the grind.</p></div>
-    <div class="lane"><h4><span class="ln">06</span>Reviews &amp; reputation</h4><p>The right ask at the right moment, every close — turning happy clients into 5-star proof.</p></div>
-  </div>
-
-  <h2 class="sec"><span class="n">Your 3 Minutes</span>Tell me about your business</h2>
-  <p class="sec-note">All tap-to-pick — there are no wrong answers, and honest ones get you the most useful build. Pick the closest fit for each.</p>
-
-  <form id="quiz">
-
-    <fieldset class="q"><legend><span class="qn">1</span>When a brand-new lead comes in, how fast do you usually respond?</legend>
-      <div class="opts">
-        <div class="opt"><input type="radio" name="q1" id="q1a" value="Within about 5 minutes — I'm fast"><label for="q1a">Within about 5 minutes — I'm fast</label></div>
-        <div class="opt"><input type="radio" name="q1" id="q1b" value="Within an hour or so"><label for="q1b">Within an hour or so</label></div>
-        <div class="opt"><input type="radio" name="q1" id="q1c" value="Same day, when I get to it"><label for="q1c">Same day, when I get to it</label></div>
-        <div class="opt"><input type="radio" name="q1" id="q1d" value="Honestly, it's inconsistent — some slip"><label for="q1d">Honestly, it's inconsistent — some slip</label></div>
-      </div>
-    </fieldset>
-
-    <fieldset class="q"><legend><span class="qn">2</span>Where do most of your deals actually come from today?</legend>
-      <div class="opts">
-        <div class="opt"><input type="radio" name="q2" id="q2a" value="Past clients & referrals"><label for="q2a">Past clients &amp; referrals</label></div>
-        <div class="opt"><input type="radio" name="q2" id="q2b" value="Online / portal leads (Zillow, etc.)"><label for="q2b">Online / portal leads (Zillow, etc.)</label></div>
-        <div class="opt"><input type="radio" name="q2" id="q2c" value="Open houses & events"><label for="q2c">Open houses &amp; events</label></div>
-        <div class="opt"><input type="radio" name="q2" id="q2d" value="Social media & content"><label for="q2d">Social media &amp; content</label></div>
-        <div class="opt"><input type="radio" name="q2" id="q2e" value="A mix / not really sure"><label for="q2e">A mix / not really sure</label></div>
-      </div>
-    </fieldset>
-
-    <fieldset class="q"><legend><span class="qn">3</span>Your past-client database — how well do you actually work it?</legend>
-      <div class="opts">
-        <div class="opt"><input type="radio" name="q3" id="q3a" value="Systematic — regular, planned touches"><label for="q3a">Systematic — regular, planned touches</label></div>
-        <div class="opt"><input type="radio" name="q3" id="q3b" value="Occasionally, when I remember"><label for="q3b">Occasionally, when I remember</label></div>
-        <div class="opt"><input type="radio" name="q3" id="q3c" value="Rarely — I know I should more"><label for="q3c">Rarely — I know I should more</label></div>
-        <div class="opt"><input type="radio" name="q3" id="q3d" value="No real system at all"><label for="q3d">No real system at all</label></div>
-      </div>
-    </fieldset>
-
-    <fieldset class="q"><legend><span class="qn">4</span>Right now, which do you want more of?</legend>
-      <div class="opts">
-        <div class="opt"><input type="radio" name="q4" id="q4a" value="More seller listings"><label for="q4a">More seller listings</label></div>
-        <div class="opt"><input type="radio" name="q4" id="q4b" value="More buyers"><label for="q4b">More buyers</label></div>
-        <div class="opt"><input type="radio" name="q4" id="q4c" value="More of both — just more volume"><label for="q4c">More of both — just more volume</label></div>
-        <div class="opt"><input type="radio" name="q4" id="q4d" value="More repeat & referral (better, not more)"><label for="q4d">More repeat &amp; referral (better, not more)</label></div>
-      </div>
-    </fieldset>
-
-    <fieldset class="q"><legend><span class="qn">5</span>How much do listings eat up (description, captions, email, flyer)?</legend>
-      <div class="opts">
-        <div class="opt"><input type="radio" name="q5" id="q5a" value="Hours per listing — it's a slog"><label for="q5a">Hours per listing — it's a slog</label></div>
-        <div class="opt"><input type="radio" name="q5" id="q5b" value="About an hour each"><label for="q5b">About an hour each</label></div>
-        <div class="opt"><input type="radio" name="q5" id="q5c" value="I've got it down to a routine"><label for="q5c">I've got it down to a routine</label></div>
-        <div class="opt"><input type="radio" name="q5" id="q5d" value="I dread it / put it off"><label for="q5d">I dread it / put it off</label></div>
-      </div>
-    </fieldset>
-
-    <fieldset class="q"><legend><span class="qn">6</span>After a contract's accepted — deadlines, signatures, updates — how's that go?</legend>
-      <div class="opts">
-        <div class="opt"><input type="radio" name="q6" id="q6a" value="I've got a smooth system"><label for="q6a">I've got a smooth system</label></div>
-        <div class="opt"><input type="radio" name="q6" id="q6b" value="I white-knuckle it every time"><label for="q6b">I white-knuckle it every time</label></div>
-        <div class="opt"><input type="radio" name="q6" id="q6c" value="I pay a transaction coordinator"><label for="q6c">I pay a transaction coordinator</label></div>
-        <div class="opt"><input type="radio" name="q6" id="q6d" value="It's a real stress point"><label for="q6d">It's a real stress point</label></div>
-      </div>
-    </fieldset>
-
-    <fieldset class="q"><legend><span class="qn">7</span>Content &amp; staying visible online?</legend>
-      <div class="opts">
-        <div class="opt"><input type="radio" name="q7" id="q7a" value="Consistent — I post regularly"><label for="q7a">Consistent — I post regularly</label></div>
-        <div class="opt"><input type="radio" name="q7" id="q7b" value="On-and-off / in spurts"><label for="q7b">On-and-off / in spurts</label></div>
-        <div class="opt"><input type="radio" name="q7" id="q7c" value="I know I should but I don't"><label for="q7c">I know I should but I don't</label></div>
-        <div class="opt"><input type="radio" name="q7" id="q7d" value="Not really my thing"><label for="q7d">Not really my thing</label></div>
-      </div>
-    </fieldset>
-
-    <fieldset class="q"><legend><span class="qn">8</span>Reviews — do you consistently collect them after a closing?</legend>
-      <div class="opts">
-        <div class="opt"><input type="radio" name="q8" id="q8a" value="Every time — I have a habit"><label for="q8a">Every time — I have a habit</label></div>
-        <div class="opt"><input type="radio" name="q8" id="q8b" value="Sometimes, if I remember"><label for="q8b">Sometimes, if I remember</label></div>
-        <div class="opt"><input type="radio" name="q8" id="q8c" value="Rarely — I mean to and don't"><label for="q8c">Rarely — I mean to and don't</label></div>
-        <div class="opt"><input type="radio" name="q8" id="q8d" value="Never really built the habit"><label for="q8d">Never really built the habit</label></div>
-      </div>
-    </fieldset>
-
-    <fieldset class="q"><legend><span class="qn">9</span>If ONE thing ran itself starting tomorrow, what would change your business most?</legend>
-      <div class="opts">
-        <div class="opt"><input type="radio" name="q9" id="q9a" value="Never dropping a new lead again"><label for="q9a">Never dropping a new lead again</label></div>
-        <div class="opt"><input type="radio" name="q9" id="q9b" value="My database working itself"><label for="q9b">My database working itself</label></div>
-        <div class="opt"><input type="radio" name="q9" id="q9c" value="Listings marketed in minutes"><label for="q9c">Listings marketed in minutes</label></div>
-        <div class="opt"><input type="radio" name="q9" id="q9d" value="Transaction admin off my plate"><label for="q9d">Transaction admin off my plate</label></div>
-        <div class="opt"><input type="radio" name="q9" id="q9e" value="Always-on content & visibility"><label for="q9e">Always-on content &amp; visibility</label></div>
-        <div class="opt"><input type="radio" name="q9" id="q9f" value="More reviews & a stronger reputation"><label for="q9f">More reviews &amp; a stronger reputation</label></div>
-      </div>
-    </fieldset>
-
-    <fieldset class="q"><legend><span class="qn">10</span>How do you feel about new tech and tools?</legend>
-      <div class="opts">
-        <div class="opt"><input type="radio" name="q10" id="q10a" value="Love it — early adopter"><label for="q10a">Love it — early adopter</label></div>
-        <div class="opt"><input type="radio" name="q10" id="q10b" value="Fine with it if it's simple"><label for="q10b">Fine with it if it's simple</label></div>
-        <div class="opt"><input type="radio" name="q10" id="q10c" value="I'd rather it was just done FOR me"><label for="q10c">I'd rather it was just done FOR me</label></div>
-        <div class="opt"><input type="radio" name="q10" id="q10d" value="Tech kind of stresses me out"><label for="q10d">Tech kind of stresses me out</label></div>
-      </div>
-    </fieldset>
-
-    <fieldset class="q"><legend><span class="qn">11</span>What's your biggest frustration in the business right now?</legend>
-      <div class="opts">
-        <div class="opt"><input type="radio" name="q11" id="q11a" value="Not enough leads coming in"><label for="q11a">Not enough leads coming in</label></div>
-        <div class="opt"><input type="radio" name="q11" id="q11b" value="Leads slipping through the cracks"><label for="q11b">Leads slipping through the cracks</label></div>
-        <div class="opt"><input type="radio" name="q11" id="q11c" value="Too much admin & paperwork"><label for="q11c">Too much admin &amp; paperwork</label></div>
-        <div class="opt"><input type="radio" name="q11" id="q11d" value="Not enough time to actually sell"><label for="q11d">Not enough time to actually sell</label></div>
-        <div class="opt"><input type="radio" name="q11" id="q11e" value="Staying consistent with marketing"><label for="q11e">Staying consistent with marketing</label></div>
-        <div class="opt"><input type="radio" name="q11" id="q11f" value="Feeling behind on the tech"><label for="q11f">Feeling behind on the tech</label></div>
-      </div>
-    </fieldset>
-
-    <fieldset class="q"><legend><span class="qn">12</span>For a system that reliably saves you hours or lands extra deals — what monthly range feels right?</legend>
-      <div class="opts">
-        <div class="opt"><input type="radio" name="q12" id="q12a" value="Under $100"><label for="q12a">Under $100</label></div>
-        <div class="opt"><input type="radio" name="q12" id="q12b" value="$100–250"><label for="q12b">$100–250</label></div>
-        <div class="opt"><input type="radio" name="q12" id="q12c" value="$250–500"><label for="q12c">$250–500</label></div>
-        <div class="opt"><input type="radio" name="q12" id="q12d" value="Show me the ROI and I'm flexible"><label for="q12d">Show me the ROI and I'm flexible</label></div>
-      </div>
-    </fieldset>
-
-    <div class="cta">
-      <button type="button" class="btn" id="genBtn">Get my snapshot →</button>
-      <div class="progress" id="progress">0 of 12 answered</div>
+  <!-- ═══ THE REALITY (green-tint band) ═══ -->
+  <section class="band reality-band">
+    <div class="inner narrow">
+      <h2 class="sec"><span class="n">The Reality</span>The business rewards selling. The job is mostly everything else.</h2>
+      <p class="sec-note">You didn't get licensed to write listing descriptions at 11pm, re-text a lead for the fourth time, or chase signatures after a contract's accepted. But that's where the hours actually go. AI is worth using in exactly the places that steal time from the work only <em>you</em> can do — being in front of people. The point isn't "use AI." It's taking the busywork off your plate so you can sell.</p>
     </div>
-  </form>
+  </section>
 
-  <div class="snap" id="snap">
-    <h3>Your snapshot</h3>
-    <p class="n">Copy this and text or email it back to Nick. That's it — he takes it from here.</p>
-    <textarea id="snapText" readonly></textarea>
-    <div class="row">
-      <button type="button" class="btn" id="copyBtn">Copy to send</button>
-      <button type="button" class="btn ghost" id="mailBtn">Open email to Nick</button>
-      <span class="copied" id="copied">Copied ✓</span>
+  <!-- ═══ WHERE AI HELPS (white band) ═══ -->
+  <section class="band lanes-band">
+    <div class="inner">
+      <h2 class="sec"><span class="n">Where AI Actually Helps</span>Six places it earns its keep</h2>
+      <p class="sec-note">Not a magic button — specific systems for specific leaks. The questionnaire below figures out which of these matter most for <em>your</em> business.</p>
+      <div class="lanes">
+        <div class="lane"><h4><span class="ln">01</span>Speed &amp; lead capture</h4><p>New leads answered in 60 seconds, in your voice — day or night — so you're the first call, not the fourth.</p></div>
+        <div class="lane"><h4><span class="ln">02</span>Your database, worked</h4><p>Past clients &amp; referrals nurtured automatically with touches that feel personal, not spammy.</p></div>
+        <div class="lane"><h4><span class="ln">03</span>Listings &amp; marketing</h4><p>Description, captions, email, flyer — done in one pass, screened for Fair-Housing wording.</p></div>
+        <div class="lane"><h4><span class="ln">04</span>Transaction admin</h4><p>Deadlines tracked, signatures chased, clients updated — from accepted offer to close.</p></div>
+        <div class="lane"><h4><span class="ln">05</span>Content &amp; visibility</h4><p>One win turned into a week of on-brand posts, so you stay top-of-mind without the grind.</p></div>
+        <div class="lane"><h4><span class="ln">06</span>Reviews &amp; reputation</h4><p>The right ask at the right moment, every close — turning happy clients into 5-star proof.</p></div>
+      </div>
     </div>
-  </div>
+  </section>
 
-  <h2 class="sec"><span class="n">What Happens Next</span>Simple from here</h2>
-  <div class="next">
-    <ol>
-      <li><b>You send the snapshot.</b> Copy it above and shoot it to me — text or email.</li>
-      <li><b>I read it and pick your top 3.</b> Based on your real answers, I'll come back with the three systems that would move the needle most for <em>your</em> business — what each does, and what it'd cost.</li>
-      <li><b>You choose.</b> Pick the one that excites you, and I build it — for you, in your voice, done-for-you. No pressure, no obligation from this.</li>
-    </ol>
-    <p class="safe">Everything I build for agents is <b>built safe from day one</b>: Fair-Housing screening on any wording, no invented property details, consent + STOP on every automated text, and you always stay the agent of record. These systems assist you — they never act on their own.</p>
-  </div>
+  <!-- ═══ QUESTIONNAIRE (paper band) ═══ -->
+  <section class="band quiz-band">
+    <div class="inner narrow">
+      <h2 class="sec"><span class="n">Your 3 Minutes</span>Tell me about your business</h2>
+      <p class="sec-note">All tap-to-pick — there are no wrong answers, and honest ones get you the most useful build. Pick the closest fit for each.</p>
+
+      <form id="quiz">
+
+        <fieldset class="q"><legend><span class="qn">1</span>When a brand-new lead comes in, how fast do you usually respond?</legend>
+          <div class="opts">
+            <div class="opt"><input type="radio" name="q1" id="q1a" value="Within about 5 minutes — I'm fast"><label for="q1a">Within about 5 minutes — I'm fast</label></div>
+            <div class="opt"><input type="radio" name="q1" id="q1b" value="Within an hour or so"><label for="q1b">Within an hour or so</label></div>
+            <div class="opt"><input type="radio" name="q1" id="q1c" value="Same day, when I get to it"><label for="q1c">Same day, when I get to it</label></div>
+            <div class="opt"><input type="radio" name="q1" id="q1d" value="Honestly, it's inconsistent — some slip"><label for="q1d">Honestly, it's inconsistent — some slip</label></div>
+          </div>
+        </fieldset>
+
+        <fieldset class="q"><legend><span class="qn">2</span>Where do most of your deals actually come from today?</legend>
+          <div class="opts">
+            <div class="opt"><input type="radio" name="q2" id="q2a" value="Past clients & referrals"><label for="q2a">Past clients &amp; referrals</label></div>
+            <div class="opt"><input type="radio" name="q2" id="q2b" value="Online / portal leads (Zillow, etc.)"><label for="q2b">Online / portal leads (Zillow, etc.)</label></div>
+            <div class="opt"><input type="radio" name="q2" id="q2c" value="Open houses & events"><label for="q2c">Open houses &amp; events</label></div>
+            <div class="opt"><input type="radio" name="q2" id="q2d" value="Social media & content"><label for="q2d">Social media &amp; content</label></div>
+            <div class="opt"><input type="radio" name="q2" id="q2e" value="A mix / not really sure"><label for="q2e">A mix / not really sure</label></div>
+          </div>
+        </fieldset>
+
+        <fieldset class="q"><legend><span class="qn">3</span>Your past-client database — how well do you actually work it?</legend>
+          <div class="opts">
+            <div class="opt"><input type="radio" name="q3" id="q3a" value="Systematic — regular, planned touches"><label for="q3a">Systematic — regular, planned touches</label></div>
+            <div class="opt"><input type="radio" name="q3" id="q3b" value="Occasionally, when I remember"><label for="q3b">Occasionally, when I remember</label></div>
+            <div class="opt"><input type="radio" name="q3" id="q3c" value="Rarely — I know I should more"><label for="q3c">Rarely — I know I should more</label></div>
+            <div class="opt"><input type="radio" name="q3" id="q3d" value="No real system at all"><label for="q3d">No real system at all</label></div>
+          </div>
+        </fieldset>
+
+        <fieldset class="q"><legend><span class="qn">4</span>Right now, which do you want more of?</legend>
+          <div class="opts">
+            <div class="opt"><input type="radio" name="q4" id="q4a" value="More seller listings"><label for="q4a">More seller listings</label></div>
+            <div class="opt"><input type="radio" name="q4" id="q4b" value="More buyers"><label for="q4b">More buyers</label></div>
+            <div class="opt"><input type="radio" name="q4" id="q4c" value="More of both — just more volume"><label for="q4c">More of both — just more volume</label></div>
+            <div class="opt"><input type="radio" name="q4" id="q4d" value="More repeat & referral (better, not more)"><label for="q4d">More repeat &amp; referral (better, not more)</label></div>
+          </div>
+        </fieldset>
+
+        <fieldset class="q"><legend><span class="qn">5</span>How much do listings eat up (description, captions, email, flyer)?</legend>
+          <div class="opts">
+            <div class="opt"><input type="radio" name="q5" id="q5a" value="Hours per listing — it's a slog"><label for="q5a">Hours per listing — it's a slog</label></div>
+            <div class="opt"><input type="radio" name="q5" id="q5b" value="About an hour each"><label for="q5b">About an hour each</label></div>
+            <div class="opt"><input type="radio" name="q5" id="q5c" value="I've got it down to a routine"><label for="q5c">I've got it down to a routine</label></div>
+            <div class="opt"><input type="radio" name="q5" id="q5d" value="I dread it / put it off"><label for="q5d">I dread it / put it off</label></div>
+          </div>
+        </fieldset>
+
+        <fieldset class="q"><legend><span class="qn">6</span>After a contract's accepted — deadlines, signatures, updates — how's that go?</legend>
+          <div class="opts">
+            <div class="opt"><input type="radio" name="q6" id="q6a" value="I've got a smooth system"><label for="q6a">I've got a smooth system</label></div>
+            <div class="opt"><input type="radio" name="q6" id="q6b" value="I white-knuckle it every time"><label for="q6b">I white-knuckle it every time</label></div>
+            <div class="opt"><input type="radio" name="q6" id="q6c" value="I pay a transaction coordinator"><label for="q6c">I pay a transaction coordinator</label></div>
+            <div class="opt"><input type="radio" name="q6" id="q6d" value="It's a real stress point"><label for="q6d">It's a real stress point</label></div>
+          </div>
+        </fieldset>
+
+        <fieldset class="q"><legend><span class="qn">7</span>Content &amp; staying visible online?</legend>
+          <div class="opts">
+            <div class="opt"><input type="radio" name="q7" id="q7a" value="Consistent — I post regularly"><label for="q7a">Consistent — I post regularly</label></div>
+            <div class="opt"><input type="radio" name="q7" id="q7b" value="On-and-off / in spurts"><label for="q7b">On-and-off / in spurts</label></div>
+            <div class="opt"><input type="radio" name="q7" id="q7c" value="I know I should but I don't"><label for="q7c">I know I should but I don't</label></div>
+            <div class="opt"><input type="radio" name="q7" id="q7d" value="Not really my thing"><label for="q7d">Not really my thing</label></div>
+          </div>
+        </fieldset>
+
+        <fieldset class="q"><legend><span class="qn">8</span>Reviews — do you consistently collect them after a closing?</legend>
+          <div class="opts">
+            <div class="opt"><input type="radio" name="q8" id="q8a" value="Every time — I have a habit"><label for="q8a">Every time — I have a habit</label></div>
+            <div class="opt"><input type="radio" name="q8" id="q8b" value="Sometimes, if I remember"><label for="q8b">Sometimes, if I remember</label></div>
+            <div class="opt"><input type="radio" name="q8" id="q8c" value="Rarely — I mean to and don't"><label for="q8c">Rarely — I mean to and don't</label></div>
+            <div class="opt"><input type="radio" name="q8" id="q8d" value="Never really built the habit"><label for="q8d">Never really built the habit</label></div>
+          </div>
+        </fieldset>
+
+        <fieldset class="q"><legend><span class="qn">9</span>If ONE thing ran itself starting tomorrow, what would change your business most?</legend>
+          <div class="opts">
+            <div class="opt"><input type="radio" name="q9" id="q9a" value="Never dropping a new lead again"><label for="q9a">Never dropping a new lead again</label></div>
+            <div class="opt"><input type="radio" name="q9" id="q9b" value="My database working itself"><label for="q9b">My database working itself</label></div>
+            <div class="opt"><input type="radio" name="q9" id="q9c" value="Listings marketed in minutes"><label for="q9c">Listings marketed in minutes</label></div>
+            <div class="opt"><input type="radio" name="q9" id="q9d" value="Transaction admin off my plate"><label for="q9d">Transaction admin off my plate</label></div>
+            <div class="opt"><input type="radio" name="q9" id="q9e" value="Always-on content & visibility"><label for="q9e">Always-on content &amp; visibility</label></div>
+            <div class="opt"><input type="radio" name="q9" id="q9f" value="More reviews & a stronger reputation"><label for="q9f">More reviews &amp; a stronger reputation</label></div>
+          </div>
+        </fieldset>
+
+        <fieldset class="q"><legend><span class="qn">10</span>How do you feel about new tech and tools?</legend>
+          <div class="opts">
+            <div class="opt"><input type="radio" name="q10" id="q10a" value="Love it — early adopter"><label for="q10a">Love it — early adopter</label></div>
+            <div class="opt"><input type="radio" name="q10" id="q10b" value="Fine with it if it's simple"><label for="q10b">Fine with it if it's simple</label></div>
+            <div class="opt"><input type="radio" name="q10" id="q10c" value="I'd rather it was just done FOR me"><label for="q10c">I'd rather it was just done FOR me</label></div>
+            <div class="opt"><input type="radio" name="q10" id="q10d" value="Tech kind of stresses me out"><label for="q10d">Tech kind of stresses me out</label></div>
+          </div>
+        </fieldset>
+
+        <fieldset class="q"><legend><span class="qn">11</span>What's your biggest frustration in the business right now?</legend>
+          <div class="opts">
+            <div class="opt"><input type="radio" name="q11" id="q11a" value="Not enough leads coming in"><label for="q11a">Not enough leads coming in</label></div>
+            <div class="opt"><input type="radio" name="q11" id="q11b" value="Leads slipping through the cracks"><label for="q11b">Leads slipping through the cracks</label></div>
+            <div class="opt"><input type="radio" name="q11" id="q11c" value="Too much admin & paperwork"><label for="q11c">Too much admin &amp; paperwork</label></div>
+            <div class="opt"><input type="radio" name="q11" id="q11d" value="Not enough time to actually sell"><label for="q11d">Not enough time to actually sell</label></div>
+            <div class="opt"><input type="radio" name="q11" id="q11e" value="Staying consistent with marketing"><label for="q11e">Staying consistent with marketing</label></div>
+            <div class="opt"><input type="radio" name="q11" id="q11f" value="Feeling behind on the tech"><label for="q11f">Feeling behind on the tech</label></div>
+          </div>
+        </fieldset>
+
+        <fieldset class="q"><legend><span class="qn">12</span>For a system that reliably saves you hours or lands extra deals — what monthly range feels right?</legend>
+          <div class="opts">
+            <div class="opt"><input type="radio" name="q12" id="q12a" value="Under $100"><label for="q12a">Under $100</label></div>
+            <div class="opt"><input type="radio" name="q12" id="q12b" value="$100–250"><label for="q12b">$100–250</label></div>
+            <div class="opt"><input type="radio" name="q12" id="q12c" value="$250–500"><label for="q12c">$250–500</label></div>
+            <div class="opt"><input type="radio" name="q12" id="q12d" value="Show me the ROI and I'm flexible"><label for="q12d">Show me the ROI and I'm flexible</label></div>
+          </div>
+        </fieldset>
+
+        <div class="cta">
+          <button type="button" class="btn" id="genBtn">Get my snapshot →</button>
+          <div class="progress" id="progress">0 of 12 answered</div>
+        </div>
+      </form>
+
+      <div class="snap" id="snap">
+        <h3>Your snapshot</h3>
+        <p class="n">Copy this and text or email it back to Nick. That's it — he takes it from here.</p>
+        <textarea id="snapText" readonly></textarea>
+        <div class="row">
+          <button type="button" class="btn" id="copyBtn">Copy to send</button>
+          <button type="button" class="btn ghost" id="mailBtn">Open email to Nick</button>
+          <span class="copied" id="copied">Copied ✓</span>
+        </div>
+        <p class="n" style="margin-top:16px;font-size:12px;opacity:.8">Private by design — nothing is stored or sent automatically. Your answers stay on your device until you choose to send them.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ WHAT'S NEXT (deep-navy closing band) ═══ -->
+  <section class="band next-band">
+    <div class="inner narrow">
+      <h2 class="sec"><span class="n">What Happens Next</span>Simple from here</h2>
+      <div class="next">
+        <ol>
+          <li><b>You send the snapshot.</b> Copy it above and shoot it to me — text or email.</li>
+          <li><b>I read it and pick your top 3.</b> Based on your real answers, I'll come back with the three systems that would move the needle most for <em>your</em> business — what each does, and what it'd cost.</li>
+          <li><b>You choose.</b> Pick the one that excites you, and I build it — for you, in your voice, done-for-you. No pressure, no obligation from this.</li>
+        </ol>
+        <p class="safe">Everything I build for agents is <b>built safe from day one</b>: Fair-Housing screening on any wording, no invented property details, consent + STOP on every automated text, and you always stay the agent of record. These systems assist you — they never act on their own.</p>
+      </div>
+    </div>
+  </section>
 
   <footer>
-    <span class="brand">Phore<span>thought</span></span>
-    <span>You think it, we create it. · phorethoughtconsulting@gmail.com</span>
+    <div class="finner">
+      <a class="brand" href="https://phorethoughtconsulting-ux.github.io/phorethought-site/" target="_blank" rel="noopener">Phore<span>thought</span></a>
+      <span>You think it, we create it. · <a href="https://phorethoughtconsulting-ux.github.io/phorethought-site/" target="_blank" rel="noopener">see what we build →</a> · phorethoughtconsulting@gmail.com</span>
+    </div>
   </footer>
-
-</div>
 
 <script>
 (function(){
@@ -334,7 +402,7 @@
       var first = null;
       for (var i=1;i<=TOTAL;i++){ if (!form.querySelector('input[name="q'+i+'"]:checked')){ first = form.querySelector('input[name="q'+i+'"]'); break; } }
       progress.textContent = 'Almost — a few still blank. Pick the closest fit for each (or send as-is below).';
-      progress.style.color = 'var(--gold)';
+      progress.style.color = 'var(--green)';
       if (first){ first.closest('.q').scrollIntoView({behavior:'smooth', block:'center'}); }
     }
     snapText.value = build();
@@ -342,18 +410,36 @@
     snap.scrollIntoView({behavior:'smooth', block:'start'});
   });
 
-  copyBtn.addEventListener('click', function(){
+  function copySnap(){
+    snapText.focus();
     snapText.select();
+    try { snapText.setSelectionRange(0, 999999); } catch(e){}   // iOS / mobile selection
     var ok = false;
     try { ok = document.execCommand('copy'); } catch(e){}
-    if (navigator.clipboard){ navigator.clipboard.writeText(snapText.value).catch(function(){}); ok = true; }
-    if (ok){ copied.classList.add('show'); setTimeout(function(){ copied.classList.remove('show'); }, 2200); }
+    if (navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(snapText.value).catch(function(){});
+      ok = true;
+    }
+    return ok;
+  }
+  function flash(msg){
+    copied.textContent = msg;
+    copied.classList.add('show');
+    setTimeout(function(){ copied.classList.remove('show'); copied.textContent = 'Copied ✓'; }, 4500);
+  }
+
+  copyBtn.addEventListener('click', function(){
+    if (copySnap()){ flash('Copied ✓ — paste it into a text or email to Nick'); }
   });
 
+  // Copy FIRST so there's always a usable result, then try the mail app.
+  // (mailto only opens if a mail client is registered — the copy is the guaranteed fallback.)
   mailBtn.addEventListener('click', function(){
+    copySnap();
     var subject = encodeURIComponent('My AI study snapshot');
     var body = encodeURIComponent(snapText.value);
-    window.location.href = 'mailto:phorethoughtconsulting@gmail.com?subject=' + subject + '&body=' + body;
+    try { window.location.href = 'mailto:phorethoughtconsulting@gmail.com?subject=' + subject + '&body=' + body; } catch(e){}
+    flash('Snapshot copied ✓ — if your email didn’t open, just paste it into a text to Nick');
   });
 
   refresh();

@@ -134,17 +134,7 @@
   .safe{margin-top:22px;font-size:13.5px;color:#B9C3CE;border-left:2px solid var(--green);padding-left:16px}
   .safe b{color:#fff}
 
-  /* ── the "alive" layer: scroll-reveal (JS adds .has-js) + send confirmation ── */
-  .has-js .hero-band .eyebrow,
-  .has-js .hero-band h1,
-  .has-js .hero-band .lede,
-  .has-js .hero-band .signed,
-  .has-js .stat,
-  .has-js .lane,
-  .has-js .sec,
-  .has-js .sec-note,
-  .has-js .safe{opacity:0;transform:translateY(18px);transition:opacity .7s cubic-bezier(.2,.8,.25,1),transform .7s cubic-bezier(.2,.8,.25,1)}
-  .has-js .in{opacity:1;transform:none}
+  /* send confirmation (additive — hidden until the user taps send; never hides page content) */
   .sent{display:none;margin-top:18px;padding:18px 20px;border-radius:13px;background:linear-gradient(180deg,rgba(63,125,87,.10),rgba(63,125,87,.04));border:1px solid var(--green)}
   .sent.show{display:flex;gap:14px;align-items:flex-start;animation:rise .45s ease}
   .sent .tick{flex:none;width:30px;height:30px;border-radius:50%;background:var(--green);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:16px}
@@ -155,7 +145,6 @@
     html{scroll-behavior:auto}
     *,.snap.show,.sent.show{animation:none!important;transition:none!important}
     .btn:hover,.lane:hover{transform:none}
-    .has-js .hero-band .eyebrow,.has-js .hero-band h1,.has-js .hero-band .lede,.has-js .hero-band .signed,.has-js .stat,.has-js .lane,.has-js .sec,.has-js .sec-note,.has-js .safe{opacity:1;transform:none}
   }
   footer{background:var(--paper);padding:26px clamp(20px,5vw,40px)}
   footer .finner{max-width:920px;margin:0 auto;padding-top:24px;border-top:1px solid var(--line);display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:12.5px;color:var(--muted);align-items:center}
@@ -165,7 +154,6 @@
   footer a:hover{border-bottom-color:var(--green)}
   footer .finner a:not(.brand){color:var(--green-d);font-weight:600}
 </style>
-<script>document.documentElement.classList.add('has-js')</script>
 </head>
 <body>
 
@@ -464,16 +452,6 @@
     flash('Snapshot copied ✓ — if your email didn’t open, just paste it into a text to Nick');
   });
 
-  // ── the "alive" layer: gentle scroll-reveal ──
-  (function(){
-    var sel='.hero-band .eyebrow,.hero-band h1,.hero-band .lede,.hero-band .signed,.stat,.lane,.sec,.sec-note,.safe';
-    var els=document.querySelectorAll(sel);
-    var reduce=window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if(reduce || !('IntersectionObserver' in window)){ Array.prototype.forEach.call(els,function(el){el.classList.add('in');}); return; }
-    [['.stats','.stat'],['.lanes','.lane']].forEach(function(p){ var c=document.querySelector(p[0]); if(!c)return; Array.prototype.forEach.call(c.querySelectorAll(p[1]),function(el,i){el.style.transitionDelay=(i*0.07)+'s';}); });
-    var io=new IntersectionObserver(function(en){en.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:0.08,rootMargin:'0px 0px -6% 0px'});
-    Array.prototype.forEach.call(els,function(el){io.observe(el);});
-  })();
   refresh();
 })();
 </script>

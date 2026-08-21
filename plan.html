@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>Your Plan — Built for Lexi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F6F2EA; --paper2:#FCFAF5; --surface:#FFFFFF;
+    --ink:#16293C; --navy:#13243E; --muted:#5B6673;
+    --green:#3F7D57; --green-deep:#2F6244; --green-tint:#EAF1EA;
+    --sand:#C0913F; --sand-soft:#E9D9B4;
+    --line:#E7E0D4; --line2:#EFE9DE;
+    --serif:'Fraunces',Georgia,serif; --sans:'Inter',system-ui,sans-serif;
+  }
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--sans);background:var(--paper);color:var(--ink);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  .wrap{max-width:860px;margin:0 auto;padding:0 24px}
+  .band{padding:64px 0}
+  .band.tint{background:var(--green-tint)}
+  .band.white{background:var(--surface)}
+  .eyebrow{font-size:12px;font-weight:600;letter-spacing:.28em;text-transform:uppercase;color:var(--sand);display:flex;align-items:center;gap:10px;margin-bottom:18px}
+  .eyebrow::before{content:'';width:22px;height:2px;background:var(--sand);border-radius:2px}
+  h1{font-family:var(--serif);font-weight:600;font-size:clamp(29px,6vw,58px);line-height:1.05;letter-spacing:-.01em;color:var(--navy);margin-bottom:20px;text-wrap:balance;overflow-wrap:break-word}
+  h1 em{font-style:italic;color:var(--green)}
+  h2{font-family:var(--serif);font-weight:600;font-size:clamp(26px,4vw,36px);line-height:1.1;color:var(--navy);margin-bottom:14px;letter-spacing:-.01em}
+  .lede{font-size:19px;color:var(--muted);max-width:60ch;line-height:1.6}
+  .sec-note{font-size:16.5px;color:var(--muted);max-width:64ch;margin-top:6px}
+  strong{color:var(--ink);font-weight:600}
+
+  /* HERO */
+  .hero{background:linear-gradient(180deg,var(--paper) 0%,var(--paper2) 100%);padding:76px 0 60px;border-bottom:1px solid var(--line)}
+  .hero .lede{font-size:20px;margin-top:4px}
+  .sig{margin-top:26px;font-size:15px;color:var(--muted)}
+  .sig b{color:var(--green-deep);font-weight:600}
+
+  /* STATS */
+  .stats{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:30px}
+  @media(max-width:600px){.stats{grid-template-columns:1fr}}
+  .stat{background:var(--surface);border:1px solid var(--line);border-left:3px solid var(--green);border-radius:12px;padding:18px 20px}
+  .stat .n{font-family:var(--serif);font-size:30px;font-weight:600;color:var(--green-deep);line-height:1}
+  .stat .l{font-size:14px;color:var(--muted);margin-top:7px;line-height:1.5}
+  .stat .src{display:block;font-size:11px;color:var(--muted);margin-top:11px;opacity:.92}
+  .stat .src a{color:var(--green-deep);text-decoration:underline;text-underline-offset:2px}
+
+  /* TOP 3 */
+  .cards{display:flex;flex-direction:column;gap:16px;margin-top:30px}
+  .card{background:var(--paper2);border:1px solid var(--line);border-radius:16px;padding:24px 24px 22px;position:relative;transition:transform .15s,box-shadow .2s}
+  .card:hover{transform:translateY(-2px);box-shadow:0 16px 40px rgba(19,36,62,.07)}
+  .card.lead{border:1.5px solid var(--green);background:var(--surface);box-shadow:0 8px 30px rgba(63,125,87,.08)}
+  .card-top{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:6px}
+  .card .num{font-family:var(--serif);font-size:22px;font-weight:600;color:var(--green)}
+  .card h3{font-family:var(--serif);font-size:23px;font-weight:600;color:var(--navy);letter-spacing:-.01em}
+  .pill{font-size:10.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#fff;background:var(--green);padding:4px 10px;border-radius:20px}
+  .card p{font-size:16px;color:var(--muted);line-height:1.6;margin-bottom:16px;max-width:62ch}
+  .price-row{display:flex;align-items:center;gap:18px;flex-wrap:wrap;border-top:1px dashed var(--line);padding-top:14px}
+  .price{font-size:15px;color:var(--ink)}
+  .price b{color:var(--navy);font-weight:600}
+  .vs{font-size:13.5px;color:var(--muted);font-style:italic}
+  .vs s{opacity:.7}
+  .card.later{background:var(--paper);border:1px dashed #CFC6B4;box-shadow:none}
+  .card.later:hover{transform:translateY(-1px);box-shadow:0 8px 22px rgba(19,36,62,.05)}
+  .card.later h3{color:var(--ink)}
+  .card.later .num{color:var(--sand)}
+  .tag-later{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#8A6A1A;background:var(--sand-soft);padding:4px 11px;border-radius:20px}
+  .card-bridge{font-family:var(--serif);font-size:19px;font-style:italic;color:var(--navy);margin:6px 0 0;padding-left:2px}
+
+  /* REASSURE */
+  .reassure{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:28px}
+  @media(max-width:640px){.reassure{grid-template-columns:1fr}}
+  .re{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:18px 20px}
+  .re .ic{font-size:22px;margin-bottom:8px}
+  .re h4{font-size:15px;font-weight:600;color:var(--navy);margin-bottom:4px}
+  .re p{font-size:14px;color:var(--muted);line-height:1.5}
+
+  /* WAYS */
+  .ways{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:26px}
+  @media(max-width:700px){.ways{grid-template-columns:1fr}}
+  .way{border:1px solid var(--line);border-radius:14px;padding:20px;background:var(--paper2)}
+  .way.pick{border:1.5px solid var(--sand);background:var(--surface);position:relative}
+  .way .tag{font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--sand);margin-bottom:8px}
+  .way h4{font-family:var(--serif);font-size:19px;font-weight:600;color:var(--navy);margin-bottom:6px}
+  .way p{font-size:14px;color:var(--muted);line-height:1.55}
+
+  /* BUNDLE + CTA */
+  .bundle{background:var(--navy);color:#fff;border-radius:18px;padding:30px 32px;margin-top:34px;display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
+  .bundle .bl h3{font-family:var(--serif);font-size:24px;font-weight:600;color:#fff;margin-bottom:4px}
+  .bundle .bl p{font-size:14.5px;color:rgba(255,255,255,.72)}
+  .bundle .br{text-align:right}
+  .bundle .br .big{font-family:var(--serif);font-size:30px;font-weight:600;color:var(--sand-soft)}
+  .bundle .br .sm{font-size:13px;color:rgba(255,255,255,.65)}
+  @media(max-width:560px){.bundle{flex-direction:column;align-items:flex-start}.bundle .br{text-align:left}}
+
+  .founder{background:var(--green-tint);border:1px solid #D6E4D8;border-left:3px solid var(--green);border-radius:14px;padding:22px 24px;margin-top:30px}
+  .founder h4{font-family:var(--serif);font-size:20px;color:var(--green-deep);margin-bottom:6px}
+  .founder p{font-size:15.5px;color:var(--muted);line-height:1.6;max-width:64ch}
+
+  .cta-band{background:linear-gradient(180deg,var(--paper2),var(--paper));padding:64px 0 72px;text-align:center;border-top:1px solid var(--line)}
+  .cta-band h2{margin-bottom:12px}
+  .cta-band p{font-size:17px;color:var(--muted);max-width:52ch;margin:0 auto 26px}
+  .btn{display:inline-block;background:var(--sand);color:#2A2210;font-weight:600;font-size:16px;letter-spacing:.02em;padding:17px 36px;border-radius:12px;text-decoration:none;box-shadow:0 10px 28px rgba(192,145,63,.28);transition:transform .15s,box-shadow .2s}
+  .btn:hover{transform:translateY(-2px);box-shadow:0 16px 36px rgba(192,145,63,.34)}
+  .cta-sub{margin-top:16px;font-size:13.5px;color:var(--muted)}
+
+  footer{background:var(--navy);color:rgba(255,255,255,.6);text-align:center;padding:34px 24px;font-size:13px}
+  footer .fb{font-family:var(--serif);font-size:17px;color:#fff;margin-bottom:5px}
+  footer .fb em{font-style:italic;color:var(--sand-soft)}
+  html{overflow-x:hidden;max-width:100%}
+  .stat,.card,.re,.way,.price,.vs{min-width:0}
+  .stat .src a{word-break:break-word}
+  .lede,.sec-note,.l,.card p,.founder p,.card-bridge{overflow-wrap:break-word}
+  @media(max-width:600px){ h1 br{display:none} }
+  @media print{
+    body{background:#fff}
+    *{-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important}
+    .card:hover,.btn:hover,.re:hover{transform:none !important;box-shadow:none !important}
+    .band{padding:42px 0}
+    .card,.bundle,.founder,.stat,.re,.way{break-inside:avoid}
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Your Plan · from your study</div>
+    <h1>Lexi — here's what <br>I'd build <em>for you.</em></h1>
+    <p class="lede">You took the study. Here's the honest read on your business, the three things I'd build, and exactly how we'd start — no tech-speak, and nothing extra on your plate.</p>
+    <p class="sig">Built just for you by <b>Phorethought</b> · you think it, we create it</p>
+  </div>
+</header>
+
+<!-- THE HONEST READ -->
+<section class="band tint">
+  <div class="wrap">
+    <div class="eyebrow">Worth knowing</div>
+    <h2>Wanting more leads is normal.<br>Here's what the data shows.</h2>
+    <p class="sec-note">Almost every agent's first instinct is "I need more leads" — totally fair. But two numbers from the research point somewhere interesting: the biggest, fastest wins usually aren't in <em>new</em> leads at all — they're in the ones you already get and the people you already know. Here's why:</p>
+    <div class="stats">
+      <div class="stat"><div class="n">21×</div><div class="l">More likely to <strong>qualify</strong> a lead when you respond in 5 minutes instead of 30. The first agent to answer usually wins.</div><span class="src">Source: <a href="https://www.onecavo.com/wp-content/uploads/2015/11/MIT-InsideSales.com_Lead-Response-Management.pdf" target="_blank" rel="noopener">MIT / InsideSales.com Lead Response Management Study (2007)</a></span></div>
+      <div class="stat"><div class="n">41%</div><div class="l">Of a typical agent's business comes from <strong>repeat clients &amp; past-client referrals</strong> (20% + 21%) — the database most agents never work on purpose.</div><span class="src">Source: <a href="https://www.nar.realtor/magazine/real-estate-news/sales-marketing/income-steady-even-as-market-slows-2025-member-trends" target="_blank" rel="noopener">NAR 2025 Member Profile (2024 data)</a></span></div>
+    </div>
+    <p class="sec-note" style="margin-top:22px">The good news: those are the <strong>faster, cheaper</strong> wins to put in place — and they quietly make every new lead you get later worth more. That's where the first three below focus.</p>
+  </div>
+</section>
+
+<!-- TOP 3 -->
+<section class="band white">
+  <div class="wrap">
+    <div class="eyebrow">The three I'd build</div>
+    <h2>Built for you, in your voice.</h2>
+    <p class="sec-note">Each one quietly handles a job that's easy to let slip when you're busy being in front of people. Start with one, add the others whenever you're ready.</p>
+
+    <div class="cards">
+      <div class="card lead">
+        <div class="card-top"><span class="num">01</span><h3>Never drop a lead again</h3><span class="pill">Start here</span></div>
+        <p>Every new lead gets a warm, personal reply <strong>in your voice, within a minute</strong> — day, night, weekend. It answers their first question, feels them out, and books the call on your calendar. You go from the fourth call back to the <em>first</em>.</p>
+        <div class="price-row">
+          <span class="price">Founding rate: <b>$600 to build + $175/mo</b>, fully handled</span>
+          <span class="vs">The tools that do this run <s>$349–999/mo</s> — and you'd wire them up yourself.</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-top"><span class="num">02</span><h3>Your database, working itself</h3></div>
+        <p>Your past clients and sphere stay warm <strong>automatically</strong> — genuine, personal-feeling check-ins on a rhythm, not spam. When someone's ready to move, it taps you on the shoulder so you reach out at the perfect moment. That's the goldmine hiding in your own database, finally worked.</p>
+        <div class="price-row">
+          <span class="price">Founding rate: <b>$450 to build + $125/mo</b></span>
+          <span class="vs">Instead of a clunky system you'd have to set up and run yourself.</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-top"><span class="num">03</span><h3>Reviews on autopilot</h3></div>
+        <p>Every time you close, the right review ask goes out at the right moment — <strong>without you remembering to send it</strong>. Happy clients turn into the 5-star proof that wins your next ones. Anyone unhappy comes quietly to you first, protecting your rating.</p>
+        <div class="price-row">
+          <span class="price">Founding rate: <b>$350 to build + $95/mo</b></span>
+          <span class="vs">vs. the $75–99/mo review tools — but built into everything else you have.</span>
+        </div>
+      </div>
+
+      <p class="card-bridge">And more leads — the thing you asked about? Here's how it usually plays out:</p>
+
+      <div class="card later">
+        <div class="card-top"><span class="num">04</span><h3>More leads</h3><span class="tag-later">The one you asked for · usually the long game</span></div>
+        <p>You asked for more leads — and yes, that's absolutely something we can build: steadier content, a stronger presence, even paid lead campaigns. The thing worth knowing is <em>how</em> it tends to work: generating new leads is the slowest and most expensive lever, and it performs best once the first three are in place — because by then, every lead you bring in actually gets answered and followed up. Most agents find they get more out of tightening what they already have than out of turning up the volume. So it's here whenever you want it — a lot of people just reach for it later than they'd expect.</p>
+        <div class="price-row">
+          <span class="price">Scoped to your goals + ad budget</span>
+          <span class="vs">Usually worth pricing once the first three are running.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REASSURE -->
+<section class="band tint">
+  <div class="wrap">
+    <div class="eyebrow">The part people worry about</div>
+    <h2>You don't have to be "techy."</h2>
+    <div class="reassure">
+      <div class="re"><div class="ic">🌙</div><h4>You don't touch a thing</h4><p>It runs quietly in the background. No new app to learn, no buttons to babysit.</p></div>
+      <div class="re"><div class="ic">🗣️</div><h4>It sounds like you</h4><p>Everything it sends is written in your voice — clients feel <em>you</em>, not a robot.</p></div>
+      <div class="re"><div class="ic">📈</div><h4>You'll see it working</h4><p>A simple monthly note shows exactly what it caught for you — leads answered, reviews collected.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- WAYS -->
+<section class="band white">
+  <div class="wrap">
+    <div class="eyebrow">Three ways to have it</div>
+    <h2>However's easiest for you.</h2>
+    <div class="ways">
+      <div class="way pick">
+        <div class="tag">Most popular</div>
+        <h4>Done for you</h4>
+        <p>I build it, host it, and keep it running. You just get the results. The prices above — nothing else to manage, ever.</p>
+      </div>
+      <div class="way">
+        <div class="tag">In between</div>
+        <h4>Built with you</h4>
+        <p>It lives in your own accounts, and I keep it tuned and running for a monthly fee. A bit more yours.</p>
+      </div>
+      <div class="way">
+        <div class="tag">Fully yours</div>
+        <h4>Built &amp; handed over</h4>
+        <p>I build it, hand you the keys, and it's 100% yours — a one-time build, no monthly. Best if you'd rather own it outright.</p>
+      </div>
+    </div>
+
+    <div class="bundle">
+      <div class="bl"><h3>Want all three?</h3><p>The full system — leads caught, database worked, reviews flowing — done for you.</p></div>
+      <div class="br"><div class="big">$1,200 + $350/mo</div><div class="sm">founding bundle · saves you $200 up front</div></div>
+    </div>
+
+    <div class="founder">
+      <h4>You'd be my founding real-estate client.</h4>
+      <p>That means your rate is <strong>locked in</strong> for as long as you're with me — and all I'd ask in return is your honest feedback while we build, and a short testimonial once you feel the results. That's the whole "catch."</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-band">
+  <div class="wrap">
+    <div class="eyebrow" style="justify-content:center">Let's start</div>
+    <h2>Let's start with #1.</h2>
+    <p>Give me 15 minutes and I'll show you exactly how "never drop a lead" would work for <em>your</em> business — live, no pressure. Or just tell me which of the three is calling to you.</p>
+    <a class="btn" href="#">Let's set up 15 minutes →</a>
+    <div class="cta-sub">No pressure, no jargon — just your plan, made real.</div>
+  </div>
+</section>
+
+<footer>
+  <div class="fb">You think it, <em>we create it.</em></div>
+  Phorethought · built for Lexi
+</footer>
+
+</body>
+</html>
